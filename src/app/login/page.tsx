@@ -28,16 +28,15 @@ function LoginPage() {
     } finally {
       setLoading(false);
     }
-
-    useEffect(() => {
-      if (user.email.length > 0 && user.password.length > 0) {
-        setButtonDisable(false);
-      } else {
-        setButtonDisable(true);
-      }
-    }),
-      [user];
   };
+
+  useEffect(() => {
+    if (user.email.length > 0 && user.password.length > 0) {
+      setButtonDisable(false);
+    } else {
+      setButtonDisable(true);
+    }
+  }, [user]);
 
   return (
     <div className="flex flex-col items-center justify-center">
